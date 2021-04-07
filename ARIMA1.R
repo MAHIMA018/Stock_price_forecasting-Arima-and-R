@@ -1,7 +1,6 @@
 install.packages("timeSeries")
 library(quantmod)
 library(tseries)
-library(timeseries)
 library(forecast)
 library(xts)
 
@@ -19,7 +18,9 @@ Acf(SPY_close_Prices, main='ACF for differentiated series')
 Pacf(SPY_close_Prices,main='PACF for diffrentiated series')
 print(adf.test(SPY_close_Prices))
 par(mfrow=c(1,1))
-auto.arima(SPY_close_Prices)      
+
+auto.arima(SPY_close_Prices)  
+
 fitA=auto.arima(SPY_close_Prices)
 par(mfrow=c(1,3))
 tsdisplay(residuals(fitA) , lag.max = 40 , main = '(3,1,4) model residuals')
@@ -54,8 +55,5 @@ a1=(100-.5829519)
 a2=100-.5840936
 a3=100-.5854868
 a4=100-.5839858
-a1
-a2
-a3
-a4
+
 
